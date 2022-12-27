@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import flats from '../data/flats.js'
 
 import '../assets/stylesheets/application.scss';
 
