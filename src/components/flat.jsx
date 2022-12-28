@@ -15,8 +15,12 @@ const Flatlist = (props)=> {
       );
     });
   };
+
+  return (
+     <div className = 'Flatlist' >
+      {renderList()}
+     </div>
+   );
 }
-
-
 
 export default Flatlist;
