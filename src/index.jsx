@@ -1,19 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import flats from '../data/flats.js'
 
+// App
+import App from '../components/app.jsx'
+
+// stylesheet
 import '../assets/stylesheets/application.scss';
 
-const Hello = ({ name }) => {
-  return (
-    <div>
-      Hello,
-      {name}
-    </div>
-  );
-};
-
-const root = document.getElementById('root');
-if (root) {
-  ReactDOM.render(<Hello name="World" />, root);
-}
+// rendering instance of the component in the DOM
+ReactDOM.render(<App />, document.querySelector('#root'));

@@ -1,26 +1,19 @@
 import React from 'react';
-import Flat from './flat';
 
-const Flatlist = (props)=> {
-   const renderList = () => {
-    return props.flats.map((flat, index) => {
-      return (
-        <Flat
-          flat={flat}
-          key={flat.lat}
-          selected={flat.name === props.selectedFlat.name}
-          index={index}
-          selectFlat={props.selectFlat}
-        />
-      );
-    });
+const Flat = (props) => {
+  const handleClick= () => {
+    props.selectFlat(props.index)
   };
 
   return (
-     <div className = 'Flatlist' >
-      {renderList()}
-     </div>
-   );
-}
+    <div className={`card${props.selected ? ' active' : ''}`} style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('${props.flat.imageUrl}')` }}>
+      <div className="card-category">{props.flat.price} {props.flat.priceCurrency}</div>
+      <div className="card-description">
+        <h2>{props.flat.name}</h2>
+      </div>
+      <a className="card-link" href="#" onClick={handleClick}></a>
+    </div>
+  );
+};
 
-export default Flatlist;
+export default Flat;
